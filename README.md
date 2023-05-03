@@ -3,7 +3,7 @@
 Here is a way to create an **absolute positionning in Outlook without VML**.
 See a basic exmplae on my [codePen](https://codepen.io/matthieuSolente/pen/ZEqXgPL) 
 
-For this to work, do not use tables inSIDE the absolute positionned block, they will be created automatically by the Outlook rendering engine. 
+For this to work, do not use tables inside the absolute positionned block, they will be created automatically by the Outlook rendering engine. 
 Don't wrap all the content of your email in a table, otherwise it won't work. 
 You can use table Before or after the **MSO Faux absolute** bloc.
 
@@ -13,8 +13,10 @@ In our example, we'll use two separate elements: an image, which will act as a b
 
 ## Mso frames
 
-For this to work in Outlook, we will use what word calls frames
-mso-element:frame
+For this to work in Outlook, we will use what word calls frames.
+
+**mso-element:frame**
+
 As we can read in Stig's documentation
 "Word allows the creation of floating frames in Web documents, even though there are currently no HTML elements to support this functionality"
 From the moment we use properties related to frames, like the ones we will see just after, Outlook automatically inserts into the code, the mso-element:frame property. So we don't need to specify it in our template.
