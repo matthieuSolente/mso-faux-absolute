@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>MSO FAUX ABSOLUTE</title>
+    <!--[if gte mso 9]>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <!-- CSS Reset : BEGIN -->
+    <!--[if (gte mso 9)|(IE)]>
+    <style>
+      table,td,p,a,span {font-family: Arial, sans-serif !important;}
+      a {text-decoration: none;}
+    </style>
+    <![endif]-->
+    <style>
+      :root {
+      color-scheme: light;
+      supported-color-schemes: light;
+      }
+      html,
+      body {
+      margin: 0 auto !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+      }
+      /* center email on Android 4.4 - margin reset */
+      div[style*="margin: 16px 0"] {
+      margin: 0 !important;
+      }
+      table,
+      td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+      }
+      table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      margin: 0 auto !important;
+      mso-table-lspace: 0;
+      mso-table-rspace: 0;
+      }
+      /* La poste hack*/
+      h2,
+      h3 {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      background: none;
+      }
+    </style>
+ <style>
+    @media screen and (max-width:600px){
+      .img{max-height:0px !important;}
+    }
+    </style>
+  </head>
+  <body style="margin: 0 auto !important; padding: 0 !important;background-color: #999999;">
+ <!-- mso-element-frame-hspace:230px; -->
+    <div style="font-size:1rem;max-width:600px;margin:0 auto;text-align:center;padding:0" role="article" aria-roledescription="email" aria-label="Get off the table email and faux Absolute" lang="en" dir="ltr">
+      <!---------------------------->
+      <!-- MSO FAUX ABSOLUTE : BEGIN -->
+      <!---------------------------->
+      <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;">&zwnj;</span>
+        <div class="img" style="max-height:100px;mso-element-wrap:no-wrap-beside;mso-element-left:center;">
+          <img src="https://placehold.co/600x400" width="600" style="width:100%;max-width:600px;display:block;margin:0 auto;">
+        </div>
+        <div style="mso-element-frame-width:400px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:100px;max-width:400px;padding:20px;margin:0 auto">
+          <h1>This is my Title</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut
+          </p>
+          <a href="htts://parcel.io" style="background-color:#005959; text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
+              <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i>
+              <span style="mso-text-raise:50%;">
+                <![endif]-->My link text<!--[if mso]>
+              </span>
+              <i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
+            </a>
+        </div>
+        <!---Adding a br clear=all allow us to recenter the element------------> 
+        <br clear="all"/>
+   
+        <!---------------------------->
+        <!--  MSO FAUX ABSOLUTE: END   -->
+        <!----------------------------> 
+        <!---Add a spacer if you need vertical space----------->     
+        <!--[if !mso]><!-->
+        <div style="line-height:130px; height:130px;">&#8202;</div>
+        <!--<![endif]-->
+       <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:600px;background-color:#ffffff">
+          <tr>
+            <td align="center" style="font-family: Arial,sans-serif; font-size:14px; mso-line-height-rule: exactly;line-height: 21px;  color: #000000;padding:20px">
+              <h2 style="font-family: Arial,sans-serif;font-size:16px; mso-line-height-rule: exactly;line-height: 24px; color: #4f4169;margin:0 0 14px 0">Titre article</h2>
+              <p style="margin: 0 0 8px;">
+                Lorem dat aut et qui ommolut unt, simpor aut et apelecum quiatiiscil ipiet a sum lam aut aut aut optaspe ribus, que volor . Berro la estern con nonsed ut aloe a dolorat iandis exerspient estern con.</p>
+            </td>
+          </tr>
+        </table>
+  </body>
+</html>
