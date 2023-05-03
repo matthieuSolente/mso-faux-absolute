@@ -18,12 +18,15 @@ So here are the properties used to create absolute positioning in Outlook
 This property will allow us to define the width of our frame. The same thing exists for the height, mso-element-height, but we do not need to specify it.
 Using this property will automatically create a tabular structure in Outlook. So if we have the following structure:
 
+```
 <div align="center" style="mso-element-frame-width:500px">
 	<p>Lorem ipsum dolor sit amet</p>
 </div>
+```
 
 Outlook turns it into
 
+```
 <div style="mso-element:frame;mso-element-frame-width:375.0pt;mso-element-wrap:auto;mso-element-anchor-horizontal:column;mso-height-rule:exactly">
   <table>
     <tr>
@@ -33,6 +36,7 @@ Outlook turns it into
     </tr>
   </table>
 </div>
+```
 
 ## The magics mso properties
 
@@ -69,6 +73,7 @@ To maintain a clean and consistent code, we will create our template by surround
 
 So we will build our block with an image and then a text block that is supposed to be positioned on top.d
 
+```
 <!--- When using mso-elements you’ll see a dashed border appear around the first element used. Using a span with a 0px font size delete entirely this border; so this can be placed on top of the first element, or inside the first element -------------> 
 <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;">&zwnj;</span>
 
@@ -90,9 +95,9 @@ So we will build our block with an image and then a text block that is supposed 
 
 <!---Adding a br clear=all to put back elements in the flow------------> 
 <br clear="all"/>
-
+```
 
 
 Please test this code in Outlook, or try to play with the template mso-faux-absolute.html !
-
+This small discovery would never have been possible without the detailed documentation of [Stig Morten Myre](https://stigmortenmyre.no/mso/html/concepts/ofconstyletable.htm) and [Mark Robbins](https://www.goodemailcode.com/email-enhancements/mso-styles)
 
