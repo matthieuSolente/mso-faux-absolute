@@ -3,9 +3,9 @@
 Here is a way to create an **absolute positionning in Outlook without VML**.
 See a basic example on my [codePen](https://codepen.io/matthieuSolente/pen/ZEqXgPL) 
 
-For this to work, do not use tables inside the absolute positionned block, they will be created automatically by the Outlook rendering engine. 
+For this to work, do not use tables inside the absolute positioned block, they will be created automatically by the Outlook rendering engine. 
 Don't wrap all the content of your email in a table, otherwise it won't work. 
-You can use table Before or after the **MSO Faux absolute** bloc.
+You can use table Before or after the **MSO Faux absolute** block.
 
 In our example, we'll use two separate elements: an image, which will act as a background image, and content. Each element is encapsulated in a div, to which we will add magic mso properties.
 
@@ -54,7 +54,7 @@ Two properties used together will allow us to take an element out of the flow, a
 **mso-element-left** which takes the values : center,lenght, inside,left,outside,right.
 
 ### mso-element-wrap:none
-To create a floating effect, two values work widht the mso-element-wrap property : **none** and **no-wrap-beside**.
+To create a floating effect, two values work with the mso-element-wrap property : **none** and **no-wrap-beside**.
 
 With **mso-element-wrap:none** we already have an absolute positioning. So the following code works : As the text becomes floating, the image goes under the text.
 
@@ -72,7 +72,7 @@ But the value 'none' has its limits. If you want to define a size to the frame w
 
 If we want to position our frame with the mso-element-left property, only one value works, it is **no-wrap-beside**
 So if we want to center our element, we add the two properties **mso-element-wrap:no-wrap-beside; mso-element-left:center**.
-'Around','auto','none' values have no effect on positionning.
+'Around','auto','none' values have no effect on positioning.
 
 From the moment you use these two properties, the element takes an absolute positioning or the equivalent of float.
 
