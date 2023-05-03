@@ -38,13 +38,13 @@ Outlook turns it into
 </div>
 ```
 
-## The magics mso properties
+## The magic mso properties : mso-element-wrap & mso-element-left
 
 Two properties used together will allow us to take an element out of the flow, and simulate an absolute positioning.
 **mso-element-wrap** which takes the values :  around,auto,none,no-wrap-beside.
 **mso-element-left** which takes the values : center,lenght, inside,left,outside,right.
 
-## mso-element-wrap:none
+### mso-element-wrap:none
 To create a floating effect, two values work widht the mso-element-wrap property : **none** and **no-wrap-beside**.
 
 With **mso-element-wrap:none** we already have an absolute positioning. So the following code works : As the text becomes floating, the image goes under the text.
@@ -59,6 +59,8 @@ With **mso-element-wrap:none** we already have an absolute positioning. So the f
 
 But the value 'none' has its limits. If you want to define a size to the frame with mso-element-frame-width or position it with mso-element-left, nothing works.
 
+### mso-element-wrap:no-wrap-beside
+
 If we want to position our frame with the mso-element-left property, only one value works, it is **no-wrap-beside**
 So if we want to center our element, we add the two properties **mso-element-wrap:no-wrap-beside; mso-element-left:center**.
 'Around','auto','none' values have no effect on positionning.
@@ -67,11 +69,13 @@ From the moment you use these two properties, the element takes an absolute posi
 
 ### mso-element-frame-hspace 
 
-This property can be used with pixel units to position an additional element differently;
+As we are in frames, none of the classic css properties work to center elements, so **mso-element-frame-hspace**  property can be used with pixel units to position an additional element differently;
+
+## MSO Faux Absolulte example
 
 To maintain a clean and consistent code, we will create our template by surrounding each element with a parent div.
 
-So we will build our block with an image and then a text block that is supposed to be positioned on top.d
+So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example without any style, to improve for responsive etc. If you are testing on a Testi@ or EOA emulator, the default image will not be displayed everywhere as is often the case with placeholder images. Try with real images.
 
 ```
 <!--- When using mso-elements you’ll see a dashed border appear around the first element used. Using a span with a 0px font size delete entirely this border; so this can be placed on top of the first element, or inside the first element -------------> 
