@@ -1,7 +1,7 @@
 # mso-faux-absolute
 
 Here is a way to create an **absolute positionning in Outlook without VML**.
-See a basic exmplae on my [codePen](https://codepen.io/matthieuSolente/pen/ZEqXgPL) 
+See a basic example on my [codePen](https://codepen.io/matthieuSolente/pen/ZEqXgPL) 
 
 For this to work, do not use tables inside the absolute positionned block, they will be created automatically by the Outlook rendering engine. 
 Don't wrap all the content of your email in a table, otherwise it won't work. 
