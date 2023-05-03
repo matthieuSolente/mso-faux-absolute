@@ -1,12 +1,15 @@
 # mso-faux-absolute
 
 Here is a way to create an **absolute positionning in Outlook without VML**.
+See a basic exmplae on my [codePen](https://codepen.io/matthieuSolente/pen/ZEqXgPL) 
 
 For this to work, do not use tables inSIDE the absolute positionned block, they will be created automatically by the Outlook rendering engine. 
 Don't wrap all the content of your email in a table, otherwise it won't work. 
 You can use table Before or after the **MSO Faux absolute** bloc.
 
 In our example, we'll use two separate elements: an image, which will act as a background image, and content. Each element is encapsulated in a div, to which we will add magic mso properties.
+
+![image](https://user-images.githubusercontent.com/7109121/235813558-dab71670-a14c-4c58-96ac-c2cf54af90ce.png)
 
 ## Mso frames
 
