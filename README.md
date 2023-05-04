@@ -119,7 +119,7 @@ If you have problems with z-index or elements not displaying on the web version 
 
 ## CTA 
 
-If you use a classic CTA link coded in a table, it will work on Outlook, but the button will be invisible in the web version. Mark Robbins' html button is an ideal solution in this case. Feel free to use my [generator](https://codepen.io/matthieuSolente/pen/abRpPOX) to create your link
+If you use a classic table-coded CTA link, it can work. Otherwise Mark Robbins' html button is an ideal solution in this case. Feel free to use my [generator](https://codepen.io/matthieuSolente/pen/abRpPOX) to create your link
 
 This small discovery would never have been possible without the detailed documentation of [Stig Morten Myre](https://stigmortenmyre.no/mso/html/concepts/ofconstyletable.htm) and [Mark Robbins](https://www.goodemailcode.com/email-enhancements/mso-styles)
 Created by Matthieu Solente in May 2023
