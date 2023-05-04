@@ -7,7 +7,7 @@ See also a typical design that we meet a lot in emails on [this codepen](https:/
 For this to work, don't wrap all the content of your email in a table :According to my tests in any case, encapsulating the mso block in a table container can be problematic and break the desired effect.Inside the block, you can use tables sparingly to perfect the rendering on Outlook (add padding etc.) 
 You can also use table Before or after the **MSO Faux absolute** block.
 
-There seems to be a z-index issue on Windows 10 and 11, with the text going under the image. A resolution is in progress, but this bug is no longer present in the New Outlook these two versions.
+There seems to be a z-index issue on Windows 10 and 11, with the text going under the image. A resolution is in progress, but this bug is no longer present in the New Outlook of these two versions.
 
 ## The scenario
 
