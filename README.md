@@ -112,6 +112,15 @@ So we will build our block with an image and then a text block that is supposed 
 
 
 Please test this code in Outlook, or try to play with the template mso-faux-absolute.html !
+
+### Z-index 
+
+If you have problems with z-index or elements not displaying on the web version (borders for example), try adding a display:inline-block on the div concerned, or a position:relative. This same technique also solves this kind of problem on the classic absolute positioning in vml
+
+### CTA 
+
+If you use a classic CTA link coded in a table, it will work on Outlook, but the button will be invisible in the web version. Mark Robbins' html button is an ideal solution in this case. Feel free to use my [generator](https://codepen.io/matthieuSolente/pen/abRpPOX) to create your link
+
 This small discovery would never have been possible without the detailed documentation of [Stig Morten Myre](https://stigmortenmyre.no/mso/html/concepts/ofconstyletable.htm) and [Mark Robbins](https://www.goodemailcode.com/email-enhancements/mso-styles)
 Created by Matthieu Solente in May 2023
 
