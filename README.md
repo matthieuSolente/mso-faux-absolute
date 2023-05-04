@@ -2,10 +2,14 @@
 
 Here is a way to create an **absolute positionning in Outlook without VML**.
 See a basic example on my [codePen](https://codepen.io/matthieuSolente/pen/ZEqXgPL) 
+See also a typical design that we meet a lot in emails on [this codepen](https://codepen.io/matthieuSolente/pen/abRVodY)
 
-For this to work, do not use tables inside the absolute positioned block, they will be created automatically by the Outlook rendering engine. 
-Don't wrap all the content of your email in a table, otherwise it won't work. 
-You can use table Before or after the **MSO Faux absolute** block.
+For this to work, don't wrap all the content of your email in a table :According to my tests in any case, encapsulating the mso block in a table container can be problematic and break the desired effect.Inside the block, you can use tables sparingly to perfect the rendering on Outlook (add padding etc.) 
+You can also use table Before or after the **MSO Faux absolute** block.
+
+There seems to be a z-index issue on Windows 10 and 11, with the text going under the image. A resolution is in progress, but this bug is no longer present in the New Outlook these two versions.
+
+## The scenario
 
 In our example, we'll use two separate elements: an image, which will act as a background image, and content. Each element is encapsulated in a div, to which we will add magic mso properties.
 
