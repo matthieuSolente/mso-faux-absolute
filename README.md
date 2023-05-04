@@ -88,7 +88,7 @@ As we are in frames, none of the classic css properties work to center elements,
 
 To maintain a clean and consistent code, we will create our template by surrounding each element with a parent div.
 
-So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example without any style, to improve for responsive etc. If you are testing on a Testi@ or EOA emulator, the default image will not be displayed everywhere as is often the case with placeholder images. Try with real images.
+So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example without any style, which will have to be adapted for each particular case. If you are testing on a Testi@ or EOA emulator, the default image will not be displayed everywhere as is often the case with placeholder images. Try with real images.
 
 ```
 <!--- When using mso-elements you’ll see a dashed border appear around the first element used. Using a span with a 0px font size delete entirely this border; so this can be placed on top of the first element, or inside the first element -------------> 
