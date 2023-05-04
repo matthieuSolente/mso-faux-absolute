@@ -119,7 +119,7 @@ Please test this code in Outlook, or try to play with the template mso-faux-abso
 
 ## Z-index 
 
-If you have problems with z-index or elements not displaying on the web version (borders for example), try adding a display:inline-block on the div concerned, or a position:relative. This same technique also solves this kind of problem on the classic absolute positioning in vml
+If you have problems with z-index or elements not displaying on the web version (borders o rbackground color for example), try adding a display:inline-block on the div concerned, (some time position:relative can also work). This same technique also solves this kind of problem on the classic absolute positioning in vml( test [this codepen](https://codepen.io/matthieuSolente/pen/QWMLeZW))
 
 ## CTA 
 
