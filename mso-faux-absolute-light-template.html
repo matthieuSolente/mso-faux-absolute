@@ -62,19 +62,77 @@
       background: none;
       }
     </style>
- <style>
-    @media screen and (max-width:600px){
-      .img{max-height:0px !important;}
+<style>
+   @media screen and (max-width:600px){
+    .mso-fauxAbsolute__img{
+      display:none !important;
     }
-    </style>
+    .mso-fauxAbsolute__txt{
+      height:auto !important;
+      max-width:100% !important;
+      background-image:url('https://picsum.photos/340/400?random=1');
+      background-repeat:no-repeat !important;
+      background-size:cover !important;
+      padding-top:80px !important;
+    }
+   }
+</style>
   </head>
   <body style="margin: 0 auto !important; padding: 0 !important;background-color: #999999;">
-
-
     <div style="font-size:1rem;max-width:600px;margin:0 auto;text-align:center;padding:0" role="article" aria-roledescription="email" aria-label="Get off the table email and faux Absolute" lang="en" dir="ltr">
       <!------------------------------------------------------>
       <!--  EXAMPLE OF TABLE ON TOP OF MSO FAUX ABSOLUTE BLOCK   -->
       <!------------------------------------------------------->
+     <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" role="presentation"><tr><td align="center"><![endif]-->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;background-color:#ffffff">
+          <tr>
+            <td align="center" style="font-family: Arial,sans-serif; font-size:14px; mso-line-height-rule: exactly;line-height: 21px;  color: #000000;padding:20px">
+              <h2 style="font-family: Arial,sans-serif;font-size:16px; mso-line-height-rule: exactly;line-height: 24px; color: #4f4169;margin:0 0 14px 0">Titre article</h2>
+              <p style="margin: 0">
+                Lorem dat aut et qui ommolut unt, simpor aut et apelecum quiatiiscil ipiet a sum lam aut aut aut optaspe ribus, que volor . Berro la estern con nonsed ut aloe a dolorat iandis exerspient estern con.</p>
+            </td>
+          </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+        <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span>      
+        <div style="max-height:100px;mso-element-wrap:no-wrap-beside;mso-element-left:center;">
+          <img class="mso-fauxAbsolute__img" src="https://picsum.photos/600/400?random=1" width="600" border="0" style="width:100%;max-width:600px;display:block;border:0;margin:0 auto;">
+        </div>
+
+
+        <div class="mso-fauxAbsolute__txt" style="mso-element-frame-width:400px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:100px;max-width:400px;padding:20px;margin:0 auto;height:260px;font-family: Arial,sans-serif;font-size:1em; mso-line-height-rule: exactly;line-height: 24px; color: #ffffff;">
+          
+          <h1 style="margin:0 0 20px">This is my Title</h1>
+          <p style="margin:0 0 20px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut
+          </p>
+          <a href="https://emailresourc.es/" style="background-color:#005959; text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
+              <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i>
+              <span style="mso-text-raise:50%;">
+                <![endif]-->Email Ressourcest<!--[if mso]>
+              </span>
+              <i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
+            </a>
+         
+        </div>
+        <!---Adding a br clear=all allow us to recenter the element------------> 
+       
+   
+        <!---------------------------->
+        <!--  MSO FAUX ABSOLUTE: END   -->
+        <!----------------------------> 
+        <!---Add a spacer if you need vertical space----------->     
+        <!--[if !mso]><!-->
+        <!-- <div style="line-height:130px; height:130px;background-color:#ffffff">&#8202;</div> -->
+        <!--<![endif]-->
+
+        <!------------------------------------------------------>
+        <!--  EXAMPLE OF TABLE BELOW MSO FAUX ABSOLUTE BLOCK   -->
+        <!-------------------------------------------------------> 
+          <!--[if (gte mso 9)|(IE)]>
+      <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" role="presentation"><tr><td align="center"><![endif]-->
       <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;background-color:#ffffff">
           <tr>
             <td align="center" style="font-family: Arial,sans-serif; font-size:14px; mso-line-height-rule: exactly;line-height: 21px;  color: #000000;padding:20px">
@@ -83,53 +141,8 @@
                 Lorem dat aut et qui ommolut unt, simpor aut et apelecum quiatiiscil ipiet a sum lam aut aut aut optaspe ribus, que volor . Berro la estern con nonsed ut aloe a dolorat iandis exerspient estern con.</p>
             </td>
           </tr>
-        </table><br clear="all"/>
-
-
-      <!---------------------------->
-      <!-- MSO FAUX ABSOLUTE : BEGIN -->
-      <!---------------------------->
-      <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;">&zwnj;</span>
-        <div class="img" style="max-height:100px;mso-element-wrap:no-wrap-beside;mso-element-left:center;">
-          <img src="https://placehold.co/600x400" width="600" style="width:100%;max-width:600px;display:block;margin:0 auto;">
-        </div>
-        <div style="mso-element-frame-width:400px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:100px;max-width:400px;padding:20px;margin:0 auto">
-          <h1>This is my Title</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut
-          </p>
-          <a href="https://parcel.io" style="background-color:#005959; text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
-              <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i>
-              <span style="mso-text-raise:50%;">
-                <![endif]-->My link text<!--[if mso]>
-              </span>
-              <i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
-            </a>
-        </div>
-        <!---Adding a br clear=all allow us to recenter the element------------> 
-        <br clear="all"/>
-   
-        <!---------------------------->
-        <!--  MSO FAUX ABSOLUTE: END   -->
-        <!----------------------------> 
-        <!---Add a spacer if you need vertical space----------->     
-        <!--[if !mso]><!-->
-        <div style="line-height:130px; height:130px;">&#8202;</div>
-        <!--<![endif]-->
-
-        <!------------------------------------------------------>
-        <!--  EXAMPLE OF TABLE BELOW MSO FAUX ABSOLUTE BLOCK   -->
-        <!-------------------------------------------------------> 
-       <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;background-color:#ffffff">
-          <tr>
-            <td align="center" style="font-family: Arial,sans-serif; font-size:14px; mso-line-height-rule: exactly;line-height: 21px;  color: #000000;padding:20px">
-              <h2 style="font-family: Arial,sans-serif;font-size:16px; mso-line-height-rule: exactly;line-height: 24px; color: #4f4169;margin:0 0 14px 0">Titre article</h2>
-              <p style="margin: 0 0 8px;">
-                Lorem dat aut et qui ommolut unt, simpor aut et apelecum quiatiiscil ipiet a sum lam aut aut aut optaspe ribus, que volor . Berro la estern con nonsed ut aloe a dolorat iandis exerspient estern con.</p>
-            </td>
-          </tr>
         </table>
+        <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
       </div>
   </body>
 </html>
