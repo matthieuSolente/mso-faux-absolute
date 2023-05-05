@@ -88,37 +88,73 @@ As we are in frames, none of the classic css properties work to center elements,
 
 To maintain a clean and consistent code, we will create our template by surrounding each element with a parent div.
 
-So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example without any style, which will have to be adapted for each particular case. If you are testing on a Testi@ or EOA emulator, the default image will not be displayed everywhere as is often the case with placeholder images. Try with real images.
+So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example without a minimum style, which will have to be adapted for each particular case.
 
-When you use mso-elements, you may see a white dotted border around the first element used. In this case placing this span allows to totally reduce this border. It can be placed above the first element, inside, just after the first div, or alternatively, at the highest level of the email, to be sure that a possible margin alters your design :
+When you use mso-elements, you may see a white dotted border around the first element used. In this case, placing this span makes it possible to completely reduce this border. It can be placed above the first element, inside, just after the first div, or alternatively, at the highest level of the email, to be sure that any margin does not alter your design:
+
 '''
-  <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;mso-hide:all"></span> 
+  <span style="mso-element-wrap:none;mso-element-left:center;font-size:0"></span> 
 '''
 
 ```
-<span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span> 
-<div class="img" style="max-height:100px;mso-element-wrap:no-wrap-beside;mso-element-left:center;">
-  <img src="https://placehold.co/600x400" width="600" style="width:100%;max-width:600px;display:block;margin:0 auto;">
+ <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span>      
+<div style="max-height:100px;mso-element-wrap:no-wrap-beside;mso-element-left:center;">
+  <img src="" alt="">
 </div>
-
-<div style="mso-element-frame-width:400px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:100px;max-width:400px;padding:20px;margin:0 auto">
-    <h1>This is my Title</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut</p>
-    <a href="https://parcel.io" style="background-color:#005959; text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
-    <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i>
-      <span style="mso-text-raise:50%;">
-      <![endif]-->My link text<!--[if mso]>
-      </span>
-      <i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
-    </a>
-</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="mso-element-frame-width:400px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:100px;">          
+      <h1>Lorem</h1>
+      <p>Lorem ipsum dolor sit amet
+      </p>
+      <a href="https://emailresourc.es/" style="background-color:#005959;text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
+    <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i><span style="mso-text-raise:50%;"><![endif]-->Email Resources<!--[if mso]></span><i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
+      </a>
+    </td>
+  </tr>
+</table>
 
 <!---If you perceive alignment bugs before and after your mso-element, you can try to restore the flow with a <br clear="all"/>------------> 
 <br clear="all"/>
 ```
+You can achieve the same result by using a table too
+
+```
+<div style="max-height:100px;mso-element-wrap:no-wrap-beside;mso-element-left:center;">
+  <img src="" alt="">
+</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="mso-element-frame-width:400px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:100px;">          
+      <h1>Lorem</h1>
+      <p>Lorem ipsum dolor sit amet
+      </p>
+      <a href="https://emailresourc.es/" style="background-color:#005959;text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
+    <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i><span style="mso-text-raise:50%;"><![endif]-->Email Resources<!--[if mso]></span><i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
+      </a>
+    </td>
+  </tr>
+</table>
+```
+Please test this code in Outlook, Do not hesitate to consult my example template (mso-faux-absolute.html) for a slightly more optimized version !
 
 
-Please test this code in Outlook, or try to play with the template mso-faux-absolute.html !
+## Windows 10 & 11 
+
+On these two mailboxes, the text remains under the image and is therefore hidden. One solution is to code the thing differently:
+
+```
+<div style="mso-element-frame-width:400px;mso-element-wrap:none; mso-element-left:center;mso-margin-top-alt:100px;">          
+  <h1>Lorem</h1>
+  <p>Lorem ipsum dolor sit amet
+  </p>
+  <a href="https://emailresourc.es/" style="background-color:#005959;text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
+    <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i><span style="mso-text-raise:50%;"><![endif]-->Email Resources<!--[if mso]></span><i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
+  </a>        
+</div>
+<img src="" alt="">
+```
+This will also cancel the absolute positioning on all other customers. It will therefore be necessary to rethink your code to make it work everywhere. This bug only occurs on these two mailboxes and Wall! Email. With the new Outlook on Windows Mail, this problem disappears. I am working to solve this problem, but if a fix is found, it will only be short-lived;
 
 ## Z-index 
 
