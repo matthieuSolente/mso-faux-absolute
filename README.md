@@ -90,10 +90,13 @@ To maintain a clean and consistent code, we will create our template by surround
 
 So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example without any style, which will have to be adapted for each particular case. If you are testing on a Testi@ or EOA emulator, the default image will not be displayed everywhere as is often the case with placeholder images. Try with real images.
 
-```
-<!--- When using mso-elements you’ll see a dashed border appear around the first element used. Using a span with a 0px font size delete entirely this border; so this can be placed on top of the first element, or inside the first element -------------> 
-<span style="mso-element-wrap:none;mso-element-left:center;font-size:0;">&zwnj;</span>
+When you use mso-elements, you may see a white dotted border around the first element used. In this case placing this span allows to totally reduce this border. It can be placed above the first element, inside, just after the first div, or alternatively, at the highest level of the email, to be sure that a possible margin alters your design :
+'''
+  <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;mso-hide:all"></span> 
+'''
 
+```
+<span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span> 
 <div class="img" style="max-height:100px;mso-element-wrap:no-wrap-beside;mso-element-left:center;">
   <img src="https://placehold.co/600x400" width="600" style="width:100%;max-width:600px;display:block;margin:0 auto;">
 </div>
@@ -110,7 +113,7 @@ So we will build our block with an image and then a text block that is supposed 
     </a>
 </div>
 
-<!---Adding a br clear=all to put back elements in the flow------------> 
+<!---If you perceive alignment bugs before and after your mso-element, you can try to restore the flow with a <br clear="all"/>------------> 
 <br clear="all"/>
 ```
 
@@ -119,7 +122,9 @@ Please test this code in Outlook, or try to play with the template mso-faux-abso
 
 ## Z-index 
 
-If you have problems with z-index or elements not displaying on the web version (borders o rbackground color for example), try adding a display:inline-block on the div concerned, (some time position:relative can also work). This same technique also solves this kind of problem on the classic absolute positioning in vml( test [this codepen](https://codepen.io/matthieuSolente/pen/QWMLeZW))
+If you have problems with z-index or elements not displaying on the web version (borders o rbackground color for example), try adding a display:inline-block on the div concerned, (some time position:relative can also work). 
+Here you can see an example where without the display:inline-block property, the background color of the text block disappears : https://codepen.io/matthieuSolente/pen/abRVodY
+This same technique also solves this kind of problem on the classic absolute positioning in vml( test [this codepen](https://codepen.io/matthieuSolente/pen/QWMLeZW))
 
 ## CTA 
 
