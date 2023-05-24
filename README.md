@@ -101,18 +101,16 @@ When you use mso-elements, you may see a white dotted border around the first el
 <div style="max-height:100px;mso-element-wrap:no-wrap-beside;mso-element-left:center;">
   <img src="" alt="">
 </div>
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0">
-  <tr>
-    <td style="mso-element-frame-width:400px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:100px;">          
+
+    <div style="mso-element-frame-width:400px;mso-element-wrap:no-wrap-beside; mso-element-left:center;mso-margin-top-alt:100px;">          
       <h1>Lorem</h1>
       <p>Lorem ipsum dolor sit amet
       </p>
       <a href="https://emailresourc.es/" style="background-color:#005959;text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
     <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i><span style="mso-text-raise:50%;"><![endif]-->Email Resources<!--[if mso]></span><i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
       </a>
-    </td>
-  </tr>
-</table>
+    </div>
+
 
 <!---If you perceive alignment bugs before and after your mso-element, you can try to restore the flow with a <br clear="all"/>------------> 
 <br clear="all"/>
