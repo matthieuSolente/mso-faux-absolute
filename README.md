@@ -94,7 +94,7 @@ When you use mso-elements, you may see a white dotted border around the first el
 
 '''
   <span style="mso-element-wrap:none;mso-element-left:center;font-size:0"></span> 
-'''
+  '''
 
 ```
  <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span>      
