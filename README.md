@@ -158,6 +158,9 @@ Another alternative is to use a main container, a div, to which we add the two p
 	
 Please test this code in Outlook, Do not hesitate to consult my example template (mso-faux-absolute.html) for a slightly more optimized version !
 
+## Accessibility 
+
+In terms of accessibility, the title and button are accessible and interpreted as is. NVDA reports the presence of the level 1 title as well as the link. From the top of the email you can reach the title with the shortcut "H" and the link with the shortcut "K", or with the tab key.
 
 ## Windows 10 & 11 
 
