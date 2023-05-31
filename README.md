@@ -92,9 +92,7 @@ So we will build our block with an image and then a text block that is supposed 
 
 When you use mso-elements, you may see a white dotted border around the first element used. In this case, placing this span makes it possible to completely reduce this border. It can be placed above the first element, inside, just after the first div, or alternatively, at the highest level of the email, to be sure that any margin does not alter your design:
 
-'''
-  <span style="mso-element-wrap:none;mso-element-left:center;font-size:0"></span> 
-  '''
+''' <span style="mso-element-wrap:none;mso-element-left:center;font-size:0"></span> '''
 
 ```
  <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span>      
