@@ -134,12 +134,34 @@ You can achieve the same result by using a table too
   </tr>
 </table>
 ```
+Another alternative is to use a main container, a div, to which we add the two properties mso-element-wrap:no-wrap-beside;mso-element-left:center; Inside it we place our image and our text. Note that for the text to float above the image, the mso-element-frame-width property is required.
+
+```
+<span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span>   
+<div style="mso-element-wrap:no-wrap-beside;mso-element-left:center;">   
+  <div style="max-height:100px;">
+    <img class="mso-fauxAbsolute__img" src="https://picsum.photos/600/400?random=1" width="600" border="0" style="width:100%;max-width:600px;display:block;border:0;margin:0 auto;">
+  </div>
+  <div style="mso-element-frame-width:400px;mso-margin-top-alt:100px;max-width:400px;">          
+    <h1>This is my Title</h1>
+    <p>Lorem ipsum dolor sit amet</p>
+    <a href="https://emailresourc.es/" style="background-color:#005959; text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
+	<!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i>
+	<span style="mso-text-raise:50%;">
+	  <![endif]-->Email Ressourcest<!--[if mso]>
+	</span>
+	<i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
+      </a>     
+  </div>
+</div>
+```
+	
 Please test this code in Outlook, Do not hesitate to consult my example template (mso-faux-absolute.html) for a slightly more optimized version !
 
 
 ## Windows 10 & 11 
 
-On these two mailboxes, the text remains under the image and is therefore hidden. One solution is to code the thing differently:
+On these two mailboxes, the text remains under the image and is therefore hidden. One solution is to code the thing differently, using mso-element-wrap:none.
 
 ```
 <div style="mso-element-frame-width:400px;mso-element-wrap:none; mso-element-left:center;mso-margin-top-alt:100px;">          
@@ -153,6 +175,7 @@ On these two mailboxes, the text remains under the image and is therefore hidden
 <img src="" alt="">
 ```
 This will also cancel the absolute positioning on all other customers. It will therefore be necessary to rethink your code to make it work everywhere. This bug only occurs on these two mailboxes and Wall! Email. With the new Outlook on Windows Mail, this problem disappears. I am working to solve this problem, but if a fix is found, it will only be short-lived;
+Here, experimentation is necessary as much to make floating positioning work on Windows 10 & 11Mail, as well as to create other types of layout with these properties
 
 ## Z-index 
 
