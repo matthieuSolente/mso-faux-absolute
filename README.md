@@ -84,7 +84,7 @@ From the moment you use these two properties, the element takes an absolute posi
 
 As we are in frames, none of the classic css properties work to center elements, so **mso-element-frame-hspace**  property can be used with pixel units to position an additional element differently;
 
-## MSO Faux Absolulte example
+## MSO Faux Absolute example
 
 To maintain a clean and consistent code, we will create our template by surrounding each element with a parent div.
 
