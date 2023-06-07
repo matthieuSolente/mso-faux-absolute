@@ -75,7 +75,9 @@ But the value 'none' has its limits. If you want to define a size to the frame w
 ### mso-element-wrap:no-wrap-beside
 
 If we want to position our frame with the mso-element-left property, only one value works, it is **no-wrap-beside**
+
 So if we want to center our element, we add the two properties **mso-element-wrap:no-wrap-beside; mso-element-left:center**.
+
 'Around','auto','none' values have no effect on positioning.
 
 From the moment you use these two properties, the element takes an absolute positioning or the equivalent of float.
