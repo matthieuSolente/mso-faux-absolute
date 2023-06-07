@@ -168,6 +168,7 @@ In terms of accessibility, the title and button are accessible and interpreted a
 On these two mailboxes, the text remains under the image and is therefore hidden. One solution is to code the thing differently, using mso-element-wrap:none.
 
 ```
+<span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span> 
 <div style="mso-element-frame-width:400px;mso-element-wrap:none; mso-element-left:center;mso-margin-top-alt:100px;">          
   <h1>Lorem</h1>
   <p>Lorem ipsum dolor sit amet
@@ -178,12 +179,34 @@ On these two mailboxes, the text remains under the image and is therefore hidden
 </div>
 <img src="" alt="">
 ```
-This will also cancel the absolute positioning on all other customers. It will therefore be necessary to rethink your code to make it work everywhere. This bug only occurs on these two mailboxes and Wall! Email. With the new Outlook on Windows Mail, this problem disappears. I am working to solve this problem, but if a fix is found, it will only be short-lived;
-Here, experimentation is necessary as much to make floating positioning work on Windows 10 & 11Mail, as well as to create other types of layout with these properties
+This will also cancel the absolute positioning on all other customers. It will therefore be necessary to rethink your code to make it work everywhere. This bug only occurs on these two mailboxes and Wall! Email. With the new Outlook on Windows Mail, The first solution works without problems. 
+
+
+With this alternative, to keep the elements centered, we can remove the mso-element-frame-width attribute from the first block like this
+```
+ <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span>   
+      <div style="mso-element-wrap:none;mso-element-left:center;max-width:400px;position:relative;">
+          <div class="p-0" style="padding-top:100px;mso-margin-top-alt:100px">
+            <h1 style="margin:0 0 20px">This is my Title</h1>          
+            <p style="margin:0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            
+            <a href="https://emailresourc.es/" style="background-color:#005959; text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959">
+              <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i>
+              <span style="mso-text-raise:50%;">
+                <![endif]-->Email Ressourcest<!--[if mso]>
+              </span>
+              <i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
+            </a>
+          </div>              
+      </div>
+      <img src="https://picsum.photos/600/400?random=1" width="600" border="0" style="width:100%;max-width:600px;display:block;border:0;margin:0 auto;">
+```
+
+Please check [this codepen](https://codepen.io/matthieuSolente/pen/Rwqwqar) for a working solution on Windows  10 & 11 Mail
 
 ## Z-index 
 
-If you have problems with z-index or elements not displaying on the web version (borders o rbackground color for example), try adding a display:inline-block on the div concerned, (some time position:relative can also work). 
+If you have problems with z-index or elements not displaying on the web version (borders or background color for example), try adding a display:inline-block on the div concerned, (some time position:relative can also work). 
 Here you can see an example where without the display:inline-block property, the background color of the text block disappears : https://codepen.io/matthieuSolente/pen/abRVodY
 This same technique also solves this kind of problem on the classic absolute positioning in vml( test [this codepen](https://codepen.io/matthieuSolente/pen/QWMLeZW))
 
