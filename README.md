@@ -3,11 +3,11 @@
 Here is a way to create an **absolute positionning in Outlook without VML**.
 See a basic example on my [codePen](https://codepen.io/matthieuSolente/pen/ZEqXgPL) 
 See also a typical design that we meet a lot in emails on [this codepen](https://codepen.io/matthieuSolente/pen/abRVodY)
+Here is my [codePen collection](https://codepen.io/collection/RzBzjM) on the subject
 
 For this to work, don't wrap all the content of your email in a table :According to my tests in any case, encapsulating the mso block in a table container can be problematic and break the desired effect.Inside the block, you can use tables sparingly to perfect the rendering on Outlook (add padding etc.) 
 You can also use table Before or after the **MSO Faux absolute** block.
 
-There seems to be a z-index issue on Windows 10 and 11, with the text going under the image. A resolution is in progress, but this bug is no longer present in the New Outlook of these two versions.
 
 ## The scenario
 
@@ -28,7 +28,7 @@ From the moment we use properties related to frames, like the ones we will see j
 So here are the properties used to create absolute positioning in Outlook
 
 ### mso-element-frame-width 
-This property will allow us to define the width of our frame. The same thing exists for the height, mso-element-height, but we do not need to specify it.
+This property will allow us to define the width of our frame. The same thing exists for the height, mso-element-height, but here we do not need to specify it.
 Using this property will automatically create a tabular structure in Outlook. So if we have the following structure:
 
 ```
@@ -70,21 +70,21 @@ With **mso-element-wrap:none** we already have an absolute positioning. So the f
 <img src="https://placehold.co/600x400" width="600" style="width:100%;max-width:600px;display:block;margin:0 auto;">
 ```
 
-But the value 'none' has its limits. If you want to define a size to the frame with mso-element-frame-width or position it with mso-element-left, nothing works.
+But the value 'none' has its limits. If you want to define a size to the frame with mso-element-frame-width or position it with mso-element-left, according to some tests, Outlook transforms this into a tabular structure and the created cell contains the attribute align='left' by default and it seems almost impossible to center the element afterwards. However, we can try a centering using a few other properties that we will see below.
 
 ### mso-element-wrap:no-wrap-beside
 
-If we want to position our frame with the mso-element-left property, only one value works, it is **no-wrap-beside**
+If we want to center our frame with the mso-element-left property, only one value works, it is **no-wrap-beside**
 
 So if we want to center our element, we add the two properties **mso-element-wrap:no-wrap-beside; mso-element-left:center**.
 
-'Around','auto','none' values have no effect on positioning.
+'Around','auto','none' values have no effect on positioning here.
 
-From the moment you use these two properties, the element takes an absolute positioning or the equivalent of float.
+From the moment you use these two properties, the element takes an absolute positioning or the equivalent of float. This technique is perfect for vertical absolute positioning, where you have a text centered over an image for example.
 
 ### mso-element-frame-hspace 
 
-As we are in frames, none of the classic css properties work to center elements, so **mso-element-frame-hspace**  property can be used with pixel units to position an additional element differently;
+As we are in frames, none of the classic css properties work to center elements, and If we use mso-element-left: center and we still want to shift the element, **mso-element-frame-hspace** , **mso-para-margin-left**, or **mso-para-margin-right** properties can be used with pixel units to position an additional element differently;
 
 ## MSO Faux Absolute example
 
@@ -92,7 +92,7 @@ To maintain a clean and consistent code, we will create our template by surround
 
 So we will build our block with an image and then a text block that is supposed to be positioned on top. This is a basic example without a minimum style, which will have to be adapted for each particular case.
 
-When you use mso-elements, you may see a white dotted border around the first element used. In this case, placing this span makes it possible to completely reduce this border. It can be placed above the first element, inside, just after the first div, or alternatively, at the highest level of the email, to be sure that any margin does not alter your design:
+When you use mso-elements, you may see a white dotted border around the first element used. In this case, placing the following span makes it possible to completely reduce this border. It can be placed above the first element, inside, just after the first div, or alternatively, at the highest level of the email, to be sure that any margin does not alter your design:
 
 ```
 <span style="mso-element-wrap:none;mso-element-left:center;font-size:0"></span>
@@ -163,15 +163,15 @@ Please test this code in Outlook, Do not hesitate to consult my example template
 
 ## Accessibility 
 
-In terms of accessibility, the title and button are accessible and interpreted as is. NVDA reports the presence of the level 1 title as well as the link. From the top of the email you can reach the title with the shortcut "H" and the link with the shortcut "K", or with the tab key.
+In terms of accessibility, the title and button are accessible and interpreted as is. NVDA reports the presence of the level 1 title as well as the link. From the top of the email you can reach the title with the shortcut "H" and the link with the shortcut "K", or with the tab key. For an absolute vertical positioning, this technique should therefore take precedence over the VML technique usually used for Outlook.
 
 ## Windows 10 & 11 
 
-On these two mailboxes, the text remains under the image and is therefore hidden. One solution is to code the thing differently, using mso-element-wrap:none.
+On these two mailboxes, the text remains under the image and is therefore hidden. One solution is to code the thing differently, using mso-element-wrap:none. and reversing the order. That is, instead of having the image and then the text with the property mso-element-wrap: no-wrap-beside on the elements, we have first the text block, with an mso-element-wrap:none and then the image. As mentioned above, floating positioning works on Windows 10Mail if you do this, but you have a positioning problem, because Outlook forces left alignment
 
 ```
 <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span> 
-<div style="mso-element-frame-width:400px;mso-element-wrap:none; mso-element-left:center;mso-margin-top-alt:100px;">          
+<div style="max-height:0;mso-element-frame-width:400px;mso-element-wrap:none; mso-element-left:center;mso-margin-top-alt:100px;">          
   <h1>Lorem</h1>
   <p>Lorem ipsum dolor sit amet
   </p>
@@ -181,13 +181,13 @@ On these two mailboxes, the text remains under the image and is therefore hidden
 </div>
 <img src="" alt="">
 ```
-This will also cancel the absolute positioning on all other customers. It will therefore be necessary to rethink your code to make it work everywhere. This bug only occurs on these two mailboxes and Wall! Email. With the new Outlook on Windows Mail, The first solution works without problems. 
+So that it also works on all other mailboxes, we place the max-height:0 on the text block.
 
 
 With this alternative, to keep the elements centered, we can remove the mso-element-frame-width attribute from the first block like this
 ```
  <span style="mso-element-wrap:none;mso-element-left:center;font-size:0;"></span>   
-      <div style="mso-element-wrap:none;mso-element-left:center;max-width:400px;position:relative;">
+      <div style="mso-element-wrap:none;mso-element-left:center;max-height:0;max-width:400px;position:relative;">
           <div class="p-0" style="padding-top:100px;mso-margin-top-alt:100px">
             <h1 style="margin:0 0 20px">This is my Title</h1>          
             <p style="margin:0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
